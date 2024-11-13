@@ -1,4 +1,5 @@
 <?php
+phpinfo();
 // deploy.php
 $secret = 'trinhdev-hash-token'; // Thêm mã bí mật để bảo vệ webhook
 $signature = $_SERVER['HTTP_X_HUB_SIGNATURE'];
