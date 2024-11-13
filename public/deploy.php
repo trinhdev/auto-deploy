@@ -9,7 +9,7 @@ $payload = file_get_contents('php://input');
 if ('sha1=' . hash_hmac('sha1', $payload, $secret) === $signature) {
     $output = shell_exec('cd ../ && git pull origin main');
     $output .= shell_exec('composer install --no-interaction --prefer-dist --optimize-autoloader');
-    $output .= shell_exec('php -v');
+    $output .= shell_exec('php -v && pwd');
     $output .= shell_exec('php artisan migrate --force');
     $output .= shell_exec('php artisan config:cache');
     $output .= shell_exec('php artisan route:cache');
