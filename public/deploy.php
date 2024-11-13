@@ -13,7 +13,7 @@ if ('sha1=' . hash_hmac('sha1', $payload, $secret) === $signature) {
     $output .= shell_exec('php artisan config:cache');
     $output .= shell_exec('php artisan route:cache');
     $output .= shell_exec('php artisan view:cache');
-    echo "Deploy completed:\n" . $output;
+    echo "Deploy completed nha:\n" . $output;
     http_response_code(200);
 } else {
     http_response_code(403);
